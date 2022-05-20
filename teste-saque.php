@@ -1,17 +1,15 @@
 <?php
 
+use Alura\Banco\Model\Conta\{ContaPoupanca, ContaCorrente, Titular};
+use Alura\Banco\Model\{CPF, Endereco};
+
 require_once 'autoload.php';
 
-use Alura\Banco\Model\Conta\Conta;
-use Alura\Banco\Model\Conta\Titular;
-use Alura\Banco\Model\CPF;
-use Alura\Banco\Model\Endereco;
-
-$conta = new Conta(
+$conta = new ContaPoupanca(
     new Titular(
-        new CPF('123.456.789-12'),
-        'Vinicius Dias', 
-        new Endereco('Petropolis', 'bairro Teste', 'Rua lá', '37')
+        new CPF('123.456.789-10'),
+        'Vinicius Dias',
+        new Endereco('Petrópolis', 'bairro Teste', 'Rua lá', '37')
     )
 );
 $conta->deposita(500);
